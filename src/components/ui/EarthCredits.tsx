@@ -52,7 +52,6 @@ export default function EarthCredits() {
   const { earthCreditsActive, earthCreditsPhase, setEarthCreditsPhase, endEarthCredits } = useAppStore()
   const [scrollPosition, setScrollPosition] = useState(0)
   const [showRickroll, setShowRickroll] = useState(false)
-  const audioRef = useRef<HTMLAudioElement | null>(null)
   const rickrollAudioRef = useRef<HTMLAudioElement | null>(null)
   
   // Música épica de fondo (usamos un audio royalty-free como placeholder)

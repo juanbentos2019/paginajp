@@ -145,7 +145,7 @@ const atmosphereFragmentShader = `
 `
 
 export default function PlanetEarth() {
-  const { currentSection, isWarping, isPlayingArcade, earthCreditsActive, startEarthCredits } = useAppStore()
+const { currentSection, isPlayingArcade, earthCreditsActive, startEarthCredits } = useAppStore()
   const [hasTriggered, setHasTriggered] = useState(false)
   
   const earthRef = useRef<THREE.Group>(null)
