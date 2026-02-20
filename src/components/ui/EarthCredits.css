@@ -1,0 +1,266 @@
+.earth-credits-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 2s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ====== CREDITS PHASE ====== */
+.credits-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.credits-scroll {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  transition: transform 0.05s linear;
+}
+
+.credits-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 100px;
+  padding-top: 50px;
+}
+
+.intro-text {
+  font-size: 18px;
+  color: #888;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+}
+
+.intro-earth {
+  font-size: 64px;
+  color: #4da6ff;
+  text-shadow: 0 0 30px #4da6ff, 0 0 60px #4da6ff;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 30px #4da6ff, 0 0 60px #4da6ff; }
+  to { text-shadow: 0 0 50px #4da6ff, 0 0 100px #4da6ff, 0 0 150px #4da6ff; }
+}
+
+.intro-subtitle {
+  font-size: 16px;
+  color: #666;
+  font-style: italic;
+}
+
+.credit-line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0;
+  min-height: 30px;
+}
+
+.credit-role {
+  font-size: 14px;
+  color: #888;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.credit-name {
+  font-size: 28px;
+  color: #fff;
+  font-family: 'Georgia', serif;
+}
+
+.skip-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: transparent;
+  border: 1px solid #444;
+  color: #666;
+  padding: 10px 20px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 2px;
+}
+
+.skip-button:hover {
+  border-color: #888;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ====== RICKROLL PHASE ====== */
+.rickroll-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #1a0a2e 0%, #16213e 50%, #0f3460 100%);
+  animation: rickrollFadeIn 0.5s ease-out;
+  overflow-y: auto;
+}
+
+@keyframes rickrollFadeIn {
+  from { 
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  to { 
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.rickroll-content {
+  text-align: center;
+  padding: 40px;
+  max-width: 600px;
+}
+
+.rickroll-surprise {
+  font-size: 48px;
+  margin-bottom: 30px;
+  animation: bounce 0.5s ease infinite alternate;
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
+}
+
+.rickroll-gif {
+  margin: 30px 0;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 50px rgba(255, 100, 100, 0.5);
+  animation: pulse 1s ease infinite alternate;
+}
+
+@keyframes pulse {
+  from { box-shadow: 0 0 30px rgba(255, 100, 100, 0.3); }
+  to { box-shadow: 0 0 60px rgba(255, 100, 100, 0.7); }
+}
+
+.rickroll-gif img {
+  width: 100%;
+  max-width: 400px;
+  display: block;
+}
+
+.rickroll-text {
+  margin: 30px 0;
+}
+
+.rickroll-main {
+  font-size: 32px;
+  color: #ff6b6b;
+  margin-bottom: 15px;
+  animation: rainbow 3s linear infinite;
+}
+
+@keyframes rainbow {
+  0% { color: #ff6b6b; }
+  25% { color: #ffd93d; }
+  50% { color: #6bcb77; }
+  75% { color: #4d96ff; }
+  100% { color: #ff6b6b; }
+}
+
+.rickroll-sub {
+  font-size: 18px;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+.rickroll-respect {
+  font-size: 36px;
+  color: #ffd700;
+  text-shadow: 0 0 20px #ffd700;
+  margin-top: 20px;
+}
+
+.rickroll-stats {
+  margin: 40px 0;
+  padding: 30px;
+  background: rgba(255, 215, 0, 0.1);
+  border: 2px solid #ffd700;
+  border-radius: 15px;
+}
+
+.rickroll-stats p:first-child {
+  font-size: 20px;
+  color: #ffd700;
+  margin-bottom: 15px;
+}
+
+.achievement-name {
+  font-size: 24px;
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.achievement-desc {
+  font-size: 14px;
+  color: #888;
+  font-style: italic;
+}
+
+.close-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  color: white;
+  padding: 15px 40px;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 30px;
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.close-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(102, 126, 234, 0.6);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .intro-earth {
+    font-size: 40px;
+  }
+  
+  .credit-name {
+    font-size: 22px;
+  }
+  
+  .rickroll-main {
+    font-size: 24px;
+  }
+  
+  .rickroll-gif img {
+    max-width: 280px;
+  }
+}

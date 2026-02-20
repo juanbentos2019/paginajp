@@ -1,0 +1,315 @@
+.never-planet-victory {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0px);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease-out;
+}
+
+.never-planet-victory.visible {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Confeti */
+.confetti-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.confetti {
+  position: absolute;
+  top: -20px;
+  border-radius: 2px;
+  animation: confetti-fall linear forwards;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* Modal */
+.victory-modal {
+  position: relative;
+  background: linear-gradient(135deg, #0a0015 0%, #1a0030 50%, #0a0015 100%);
+  border: 1px solid rgba(138, 43, 226, 0.3);
+  border-radius: 20px;
+  padding: 3rem;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  transform: scale(0.8) translateY(20px);
+  opacity: 0;
+  animation: modal-enter 0.6s ease-out 0.2s forwards;
+  box-shadow: 
+    0 0 60px rgba(138, 43, 226, 0.3),
+    0 0 120px rgba(138, 43, 226, 0.1),
+    inset 0 0 60px rgba(138, 43, 226, 0.05);
+}
+
+@keyframes modal-enter {
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Línea glitch decorativa */
+.victory-glitch-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #a855f7, transparent);
+  animation: glitch-line 2s ease-in-out infinite;
+}
+
+@keyframes glitch-line {
+  0%, 100% { opacity: 0.5; width: 60%; }
+  50% { opacity: 1; width: 80%; }
+}
+
+/* Icono */
+.victory-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  animation: bounce 1s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Título con glitch */
+.victory-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin: 0 0 0.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.glitch-text {
+  position: relative;
+  display: inline-block;
+  animation: glitch 2s infinite;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch-text::before {
+  color: #ff00ff;
+  animation: glitch-1 0.3s infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+}
+
+.glitch-text::after {
+  color: #00ffff;
+  animation: glitch-2 0.3s infinite;
+  clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+}
+
+@keyframes glitch {
+  0%, 90%, 100% { transform: translate(0); }
+  92% { transform: translate(-2px, 1px); }
+  94% { transform: translate(2px, -1px); }
+  96% { transform: translate(-1px, 2px); }
+  98% { transform: translate(1px, -2px); }
+}
+
+@keyframes glitch-1 {
+  0%, 90%, 100% { transform: translate(0); opacity: 0.8; }
+  92% { transform: translate(3px, 0); }
+  94% { transform: translate(-3px, 0); }
+}
+
+@keyframes glitch-2 {
+  0%, 90%, 100% { transform: translate(0); opacity: 0.8; }
+  93% { transform: translate(-3px, 0); }
+  95% { transform: translate(3px, 0); }
+}
+
+/* Subtítulo */
+.victory-subtitle {
+  font-size: 1.1rem;
+  color: #a855f7;
+  margin: 0 0 2rem;
+  font-style: italic;
+}
+
+/* Mensaje */
+.victory-message {
+  margin-bottom: 1.5rem;
+}
+
+.victory-message p {
+  color: #c4b5fd;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 0.5rem;
+}
+
+.victory-message .small {
+  font-size: 0.9rem;
+  color: #8b5cf6;
+}
+
+.victory-message .highlight {
+  color: #f59e0b;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* CTA */
+.victory-cta {
+  margin: 2rem 0;
+  padding: 1rem;
+  background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.2), transparent);
+  border-radius: 10px;
+}
+
+.cta-text {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(168, 85, 247, 0.8);
+  display: block;
+}
+
+.cta-subtext {
+  display: block;
+  font-size: 1rem;
+  color: #a855f7;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* Stats */
+.victory-stats {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #22c55e;
+  text-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.stat-badge {
+  margin-top: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
+  color: #000;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border-radius: 20px;
+  display: inline-block;
+  animation: pulse-badge 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-badge {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Botón cerrar */
+.victory-close {
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+.victory-close:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(99, 102, 241, 0.6);
+}
+
+.victory-close:active {
+  transform: translateY(0);
+}
+
+/* Footer */
+.victory-footer {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.footer-text {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .victory-modal {
+    padding: 2rem 1.5rem;
+  }
+  
+  .victory-title {
+    font-size: 1.8rem;
+  }
+  
+  .victory-icon {
+    font-size: 3rem;
+  }
+  
+  .cta-text {
+    font-size: 1.2rem;
+  }
+}

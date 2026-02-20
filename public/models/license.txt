@@ -1,0 +1,11 @@
+Model Information:
+* title:	Low Poly Space Fighter
+* source:	https://sketchfab.com/3d-models/low-poly-space-fighter-4e92f931c22a431e8026256b4c43d44d
+* author:	Mesh-Base (https://sketchfab.com/mesh-base)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Low Poly Space Fighter" (https://sketchfab.com/3d-models/low-poly-space-fighter-4e92f931c22a431e8026256b4c43d44d) by Mesh-Base (https://sketchfab.com/mesh-base) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

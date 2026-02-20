@@ -1,0 +1,36 @@
+.loader {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  z-index: 100;
+}
+
+.loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.loader-bar {
+  width: 200px;
+  height: 4px;
+  background-color: #333;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.loader-progress {
+  height: 100%;
+  background-color: #6366f1;
+  transition: width 0.3s ease;
+}
+
+.loader-text {
+  color: #fff;
+  font-size: 0.875rem;
+  font-family: monospace;
+}

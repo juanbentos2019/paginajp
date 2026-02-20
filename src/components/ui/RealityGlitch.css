@@ -1,0 +1,408 @@
+/* ==========================================
+   REALITY GLITCH - Paranoia Visual
+   ========================================== */
+
+.reality-glitch {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  animation: glitch-in 0.1s ease-out;
+}
+
+@keyframes glitch-in {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+/* ==========================================
+   GLITCH: CODE REVEAL
+   ========================================== */
+
+.glitch-code-reveal {
+  position: absolute;
+  inset: 0;
+  background: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: code-flicker 0.15s infinite;
+}
+
+@keyframes code-flicker {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 1; }
+}
+
+.glitch-code {
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  color: #00ff00;
+  text-shadow: 0 0 10px #00ff00;
+  white-space: pre;
+  animation: code-scroll 2s linear;
+  opacity: 0.8;
+}
+
+@keyframes code-scroll {
+  0% { transform: translateY(20px); }
+  100% { transform: translateY(-20px); }
+}
+
+.crack-overlay {
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.03) 45%, transparent 50%),
+    linear-gradient(-45deg, transparent 40%, rgba(255,255,255,0.03) 45%, transparent 50%),
+    linear-gradient(90deg, transparent 48%, rgba(0,0,0,0.5) 50%, transparent 52%);
+  pointer-events: none;
+}
+
+/* ==========================================
+   GLITCH: TV STATIC
+   ========================================== */
+
+.glitch-static {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.static-noise {
+  position: absolute;
+  inset: -50%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.4;
+  animation: static-move 0.1s steps(10) infinite;
+}
+
+@keyframes static-move {
+  0% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -5%); }
+  20% { transform: translate(5%, 5%); }
+  30% { transform: translate(-5%, 5%); }
+  40% { transform: translate(5%, -5%); }
+  50% { transform: translate(-2%, 2%); }
+  60% { transform: translate(2%, -2%); }
+  70% { transform: translate(-3%, -3%); }
+  80% { transform: translate(3%, 3%); }
+  90% { transform: translate(-1%, 1%); }
+  100% { transform: translate(1%, -1%); }
+}
+
+.static-lines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 255, 255, 0.03) 2px,
+    rgba(255, 255, 255, 0.03) 4px
+  );
+  animation: lines-scroll 0.5s linear infinite;
+}
+
+@keyframes lines-scroll {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(4px); }
+}
+
+/* ==========================================
+   GLITCH: ERROR WINDOW
+   ========================================== */
+
+.glitch-error-window {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+  animation: error-shake 0.1s ease-in-out 3;
+}
+
+@keyframes error-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.error-window {
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+  min-width: 350px;
+  font-family: 'MS Sans Serif', 'Segoe UI', sans-serif;
+  animation: window-appear 0.2s ease-out;
+}
+
+@keyframes window-appear {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.error-titlebar {
+  background: linear-gradient(90deg, #000080, #1084d0);
+  color: white;
+  padding: 4px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.error-close {
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.error-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.error-icon {
+  font-size: 48px;
+  animation: icon-pulse 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes icon-pulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+.error-message {
+  color: #000;
+  font-size: 14px;
+  text-align: center;
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.error-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.error-buttons button {
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  padding: 6px 20px;
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.error-buttons button:active {
+  border-color: #808080 #ffffff #ffffff #808080;
+}
+
+/* ==========================================
+   GLITCH: ALIEN SYMBOLS
+   ========================================== */
+
+.glitch-symbols {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.symbols-text {
+  font-family: monospace;
+  font-size: 24px;
+  color: #ff0066;
+  text-shadow: 
+    0 0 10px #ff0066,
+    0 0 20px #ff0066,
+    0 0 40px #ff0066;
+  white-space: pre-wrap;
+  text-align: center;
+  max-width: 80%;
+  animation: symbols-flicker 0.05s steps(2) infinite;
+  letter-spacing: 8px;
+  line-height: 1.5;
+}
+
+@keyframes symbols-flicker {
+  0% { opacity: 1; color: #ff0066; }
+  50% { opacity: 0.8; color: #00ffff; }
+  100% { opacity: 1; color: #ff0066; }
+}
+
+/* ==========================================
+   GLITCH: CREEPY FACE
+   ========================================== */
+
+.glitch-face {
+  position: absolute;
+  inset: 0;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: face-flash 0.1s ease-out;
+}
+
+@keyframes face-flash {
+  0% { background: #fff; }
+  100% { background: #000; }
+}
+
+.face-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  animation: face-zoom 1.5s ease-out forwards;
+}
+
+@keyframes face-zoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.2); }
+}
+
+.face-eyes {
+  display: flex;
+  gap: 80px;
+}
+
+.eye {
+  font-size: 80px;
+  animation: eye-stare 0.5s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.5));
+}
+
+@keyframes eye-stare {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+.face-text {
+  font-family: 'Courier New', monospace;
+  font-size: 32px;
+  color: #ff0000;
+  text-shadow: 0 0 20px #ff0000;
+  letter-spacing: 10px;
+  animation: text-flicker 0.1s steps(2) infinite;
+}
+
+@keyframes text-flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* ==========================================
+   GLITCH: SCAN LINES
+   ========================================== */
+
+.glitch-scanlines {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 1px,
+    rgba(0, 255, 255, 0.03) 1px,
+    rgba(0, 255, 255, 0.03) 2px
+  );
+}
+
+.scanline-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent
+  );
+  animation: scanline-sweep 1s linear infinite;
+}
+
+@keyframes scanline-sweep {
+  0% { top: -100px; }
+  100% { top: 100%; }
+}
+
+/* ==========================================
+   GLOBAL DISTORTION EFFECT
+   ========================================== */
+
+.glitch-distortion {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+/* Chromatic aberration en todo el contenedor */
+.reality-glitch.code_reveal,
+.reality-glitch.static,
+.reality-glitch.face {
+  animation: chromatic-shift 0.1s steps(2) infinite;
+}
+
+@keyframes chromatic-shift {
+  0% {
+    text-shadow: -2px 0 #ff0000, 2px 0 #00ffff;
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    text-shadow: 2px 0 #ff0000, -2px 0 #00ffff;
+    filter: hue-rotate(10deg);
+  }
+  100% {
+    text-shadow: -2px 0 #ff0000, 2px 0 #00ffff;
+    filter: hue-rotate(0deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .error-window {
+    min-width: 280px;
+    margin: 20px;
+  }
+  
+  .eye {
+    font-size: 50px;
+  }
+  
+  .face-eyes {
+    gap: 40px;
+  }
+  
+  .face-text {
+    font-size: 20px;
+  }
+  
+  .symbols-text {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,16 @@
+.nav-label {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+  user-select: none;
+}
+
+.nav-label.hovered {
+  font-size: 16px;
+  text-shadow: 0 0 20px currentColor, 0 2px 10px rgba(0, 0, 0, 0.8);
+}

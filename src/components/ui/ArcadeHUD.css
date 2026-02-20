@@ -1,0 +1,162 @@
+.arcade-hud {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1000;
+  font-family: 'Press Start 2P', 'Courier New', monospace;
+}
+
+/* Header */
+.arcade-header {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.arcade-title {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.arcade-title-text {
+  font-size: 1.5rem;
+  color: #ff00ff;
+  text-shadow: 
+    0 0 10px #ff00ff,
+    0 0 20px #ff00ff,
+    2px 2px 0 #00ffff;
+  letter-spacing: 2px;
+}
+
+.arcade-wave {
+  font-size: 0.9rem;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+  animation: pulse-wave 1s ease-in-out infinite;
+}
+
+@keyframes pulse-wave {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* Stats */
+.arcade-stats {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.arcade-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-label {
+  font-size: 0.6rem;
+  color: #888;
+  letter-spacing: 2px;
+}
+
+.stat-value {
+  font-size: 1.2rem;
+}
+
+.stat-value.score {
+  color: #00ff00;
+  text-shadow: 0 0 10px #00ff00;
+}
+
+.stat-value.high {
+  color: #ffff00;
+  text-shadow: 0 0 10px #ffff00;
+}
+
+.stat-value.lives {
+  font-size: 1.5rem;
+}
+
+/* Controles */
+.arcade-controls {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 30px;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.control-key {
+  padding: 6px 12px;
+  background: rgba(255, 0, 255, 0.2);
+  border: 1px solid #ff00ff;
+  border-radius: 4px;
+  color: #ff00ff;
+  font-size: 0.7rem;
+}
+
+.control-desc {
+  font-size: 0.5rem;
+  color: #888;
+  text-transform: uppercase;
+}
+
+/* Botón salir */
+.arcade-exit-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background: rgba(255, 0, 0, 0.2);
+  border: 1px solid #ff0000;
+  border-radius: 4px;
+  color: #ff0000;
+  font-family: inherit;
+  font-size: 0.7rem;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: all 0.2s ease;
+}
+
+.arcade-exit-btn:hover {
+  background: rgba(255, 0, 0, 0.4);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .arcade-title-text {
+    font-size: 1rem;
+  }
+  
+  .arcade-wave {
+    font-size: 0.7rem;
+  }
+  
+  .stat-value {
+    font-size: 1rem;
+  }
+  
+  .arcade-controls {
+    gap: 15px;
+  }
+  
+  .control-key {
+    font-size: 0.6rem;
+    padding: 4px 8px;
+  }
+}
