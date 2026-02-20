@@ -1,0 +1,71 @@
+.landscape-prompt {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+
+.landscape-content {
+  text-align: center;
+  padding: 30px;
+  max-width: 300px;
+}
+
+.rotate-icon {
+  font-size: 60px;
+  animation: tilt 1.5s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes tilt {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-20deg); }
+  75% { transform: rotate(20deg); }
+}
+
+.rotate-arrow {
+  font-size: 40px;
+  color: #6366f1;
+  margin: 10px 0;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.landscape-content h2 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin: 15px 0 10px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.landscape-content p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+.dismiss-btn {
+  background: transparent;
+  border: 1px solid rgba(99, 102, 241, 0.5);
+  color: rgba(255, 255, 255, 0.6);
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dismiss-btn:hover {
+  border-color: #6366f1;
+  color: #fff;
+  background: rgba(99, 102, 241, 0.2);
+}

@@ -9,11 +9,13 @@ import ArcadeGameOver from './components/ui/ArcadeGameOver'
 import RealityGlitch from './components/ui/RealityGlitch'
 import NavPanel from './components/ui/NavPanel'
 import EarthCredits from './components/ui/EarthCredits'
+import LandscapePrompt from './components/ui/LandscapePrompt'
 import './App.css'
 
 function App() {
   return (
     <div className="canvas-container">
+      <LandscapePrompt />
       <DeathScreen />
       <NeverPlanetVictory />
       <ArcadeHUD />
